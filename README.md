@@ -25,3 +25,45 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/your-username/voting-assistance-chatbot.git
    cd voting-assistance-chatbot
+
+
+
+## Model: LLaMA 2 7B Chat
+
+This project uses the `llama-2-7b-chat.ggmlv3.q8_0.bin` model for generating responses. You can download this model from **Hugging Face** by following these instructions:
+
+### Steps to Download the Model:
+
+1. **Sign up on Hugging Face** (if you don’t already have an account):
+   - Visit [Hugging Face](https://huggingface.co/) and create an account.
+   - Log in to your account.
+
+2. **Accept the LLaMA 2 License**:
+   - Visit the official LLaMA 2 page on Hugging Face: [Meta’s LLaMA 2 Models](https://huggingface.co/meta-llama).
+   - Select the `llama-2-7b-chat.ggmlv3.q8_0.bin` model.
+   - Click "Access Repository" and agree to the license terms.
+
+3. **Download the Model**:
+   - Use `git-lfs` to clone the model repository:
+     ```bash
+     git lfs install
+     git clone https://huggingface.co/<repo-name-for-llama-2-7b-chat>
+     ```
+   - Navigate to the downloaded directory to find the `llama-2-7b-chat.ggmlv3.q8_0.bin` file.
+
+4. **Move the Model File**:
+   - Place the downloaded model file in your project's `models/` directory (or any directory referenced in your code):
+     ```bash
+     mkdir -p models
+     mv path_to_downloaded_file/llama-2-7b-chat.ggmlv3.q8_0.bin models/
+     ```
+
+### Requirements
+
+Make sure you have the following Python libraries installed:
+- **`transformers`**: For model loading and inference.
+- **`langchain`**: To integrate the model into your chatbot pipeline.
+
+Install them using:
+```bash
+pip install transformers langchain
